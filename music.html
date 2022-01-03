@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script type="text/javascript" src="./extras/jquery.min.1.7.js"></script>
+<script type="text/javascript" src="./extras/jquery-ui-1.8.20.custom.min.js"></script>
+<script type="text/javascript" src="./extras/modernizr.2.5.3.min.js"></script>
+<script type="text/javascript" src="./lib/hash.js"></script>
+</head>
+<body style ="background-image: url(./pages/background.jpg);background-repeat: no-repeat;background-size :cover;">
+<audio id="audio" autoplay loop controls>
+	<source src="./audio/background.mp3">
+</audio>
+
+<script type="text/javascript">
+
+
+var autoplayVideoInterval = setInterval("autoplayVideo()",200);
+
+
+function autoplayVideo()
+{
+var audioVar = document.querySelector('audio')
+audioVar.volume = 0.3; 
+var promise = audioVar.play();
+if (promise !== undefined)
+{
+promise.then(function (_)
+{
+// Autoplay started!
+clearInterval(autoplayVideoInterval);
+
+}).catch(function (error) {// Autoplay was prevented.
+// Show a "Play" button so that user can start playback.
+});
+}
+}
+
+</script>
+
+</body>
+</html>
