@@ -20,7 +20,7 @@ var autoplayVideoInterval = setInterval("autoplayVideo()",200);
 function autoplayVideo()
 {
 var audioVar = document.querySelector('audio')
-audioVar.volume = 0.3; 
+audioVar.volume = 0.15; 
 var promise = audioVar.play();
 if (promise !== undefined)
 {
